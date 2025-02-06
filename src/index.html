@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>TaskMate</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-content sidebar-upper-interface">
+                <button class="home-btn sidebar-btn">
+                    <div class="button-content">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </div>
+                    <span class="home-notifications"></span>
+                </button>
+                
+                <button class="all-tasks-btn sidebar-btn">
+                    <div class="button-content">
+                        <i class="fa-regular fa-rectangle-list"></i>
+                        All
+                    </div>
+                    <span class="all-tasks-count tasks-count">0</span>
+                </button>
+
+                <button class="completed-tasks-btn sidebar-btn">
+                    <div class="button-content">
+                        <i class="fa-regular fa-circle-check"></i>
+                        Completed
+                    </div>
+                    <span class="completed-tasks-count tasks-count">0</span>
+                </button>
+
+                <button class="pending-tasks-btn sidebar-btn">
+                    <div class="button-content">
+                        <i class="fa-regular fa-clock"></i>
+                        Pending
+                    </div>
+                    <span class="pending-tasks-count tasks-count">0</span>
+                </button>
+
+                <button class="important-tasks-btn sidebar-btn">
+                    <div class="button-content">
+                        <i class="fa-regular fa-star"></i>
+                        Important
+                    </div>
+                    <span class="important-tasks-count tasks-count">0</span>
+                </button>
+            </div>
+
+            <div class="sidebar-lower-interface">
+                <button class="add-new-tasks">
+                    Create New Tasks
+                    <i class="fa-solid fa-plus"></i> 
+                </button>
+
+                <button class="minimize-sidebar">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+            </div>
+        </div>
+        <div class="main-interface">
+            <header>
+                <div class="header-logo">
+                    <h1>TaskMate</h1>
+                </div>
+                <div class="theme-controls"></div>
+            </header>
+        </div>
+    </div>
+</body>
+</html>
