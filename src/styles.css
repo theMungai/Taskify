@@ -7,6 +7,9 @@
     --grayish-black : rgb(23, 23, 25);
     --gray : rgb(35, 34, 40);
     --dark-purple : rgb(74, 2, 186);
+    --purple : #724DD9;
+    --white : rgba(247, 246, 246, 0.89);
+    --dark-blue : #060425;
 }
 
 *{
@@ -39,13 +42,82 @@ body {
     box-shadow: 0 0 0 5px rgba(219, 219, 219, 0.096);
     border-radius: var(--large-border-radius);
     background-color: var(--grayish-black);
-    color: aliceblue;
+    color: --white;
 }
 
 .sidebar{
     flex-basis: 20%;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    background-color: var(--gray);
 }
 
-.main-interface {
-    flex-basis: 80%;
+.sidebar .sidebar-upper-interface{
+    margin-top: 60px;
+    padding-left: 10px;
+}
+
+.sidebar .sidebar-upper-interface button{
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0px;
+    padding: 10px 25px;
+    background-color: transparent;
+    color:var(--white);
+    font-size: 0.95rem;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    /* outline: 2px solid red; */
+}
+
+.sidebar .sidebar-upper-interface button .fa-solid,
+.sidebar .sidebar-upper-interface button .fa-regular {
+    font-size: 1.2rem;
+    padding-right: 20px;
+}
+
+.sidebar .sidebar-upper-interface button:focus{
+    background-color: rgba(219, 219, 219, 0.096);
+}
+
+.sidebar .sidebar-upper-interface button .tasks-count {
+    color: rgba(245, 244, 244, 0.541);
+}
+
+.sidebar .sidebar-lower-interface{
+    margin: 30px 20px;
+}
+
+.sidebar .sidebar-lower-interface button{
+    display: block;
+    margin: 30px 0px;
+    background-color: var(--blue);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.sidebar .sidebar-lower-interface .add-new-tasks{   
+    margin: 0px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    
+}
+
+.sidebar-lower-interface .minimize-sidebar{
+    margin: 30px 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    float: right;
+}
+
+.sidebar .sidebar-lower-interface .add-new-tasks .fa-solid{
+    padding-left: 20px;
 }
