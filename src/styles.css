@@ -121,3 +121,21 @@ body {
 .sidebar .sidebar-lower-interface .add-new-tasks .fa-solid{
     padding-left: 20px;
 }
+
+.main-interface {
+    flex-basis: 80%;
+    padding: 0px 30px;
+}
+
+.main-interface header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    color: var(--purple);
+}
+
+.main-interface header img{
+    width: 30px;
+    cursor: pointer;
+}
