@@ -84,7 +84,7 @@ body {
     padding-right: 20px;
 }
 
-.sidebar .sidebar-upper-interface button:focus{
+.sidebar .sidebar-upper-interface button:hover{
     background-color: rgba(219, 219, 219, 0.096);
 }
 
@@ -113,7 +113,8 @@ body {
 }
 
 .sidebar-lower-interface .minimize-sidebar{
-    margin: 30px 20px;
+    margin-left: 20px;
+    margin-top: 60px;
     width: 30px;
     height: 30px;
     border-radius: 100%;
@@ -214,17 +215,72 @@ main .added-tasks-grid-header{
     color: var(--white);
     font-size: 1.2rem;
     font-weight: 500;
-    padding: 20px 0px;
+    padding-top: 20px;
+    padding-bottom: 8px;
 }
 
 .added-tasks-container .added-task{
-    display: flex;
-    justify-content: space-between;
+    height: auto;
+    display: flex; 
     align-items: center;
+    justify-content: space-between;
     background-color: var(--gray);
     width: 100%;
     border-radius: 10px;
     padding: 20px;
+    color: var(--white);
 }
 
+.added-task .fa-grip-vertical{
+    flex-basis: 10%;
+    color: var(--count-fonts);
+    cursor: grab;
+}
+
+.added-task .added-task-details-container{
+    flex-basis: 88%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.added-task-details-container .task-and-details-container{
+    flex-basis: 25%;  
+}
+
+.task-details .task-details-btn{
+    color: var(--blue);
+    font-size: 0.75rem;
+    background-color: transparent;
+    border: none;
+}
+
+.added-task .task-container-status{
+    flex-basis: 2%;
+}
+
+.added-task .crud-task{
+    flex-basis: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.added-task .crud-task button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.added-task .crud-task .fa-regular{
+    padding-left: 12px;
+}
+
+.crud-task .tasks-count-down{
+    font-size: 0.85rem;
+    color: var(--count-fonts);
+}
 
