@@ -31,7 +31,16 @@ body {
     place-items: center;
   }
 
-
+  .main-container{
+    width: 75%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 0 5px rgba(219, 219, 219, 0.096);
+    border-radius: var(--large-border-radius);
+    background-color: var(--grayish-black);
+    color: aliceblue;
+}
 
 .sidebar{
     flex-basis: 20%;
