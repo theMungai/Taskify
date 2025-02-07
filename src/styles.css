@@ -7,7 +7,7 @@
     --grayish-black : rgb(23, 23, 25);
     --gray : rgb(35, 34, 40);
     --dark-purple : rgb(74, 2, 186);
-    --purple : #724DD9;
+    --purple : rgb(114, 77, 217);
     --white : rgba(247, 246, 246, 0.89);
     --dark-blue : #060425;
     --count-fonts : rgba(245, 244, 244, 0.541);
@@ -42,7 +42,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1); 
+    background: var(--gray); 
     border-radius: 10px; 
 }
 
@@ -176,6 +176,25 @@ body {
     overflow-y: scroll;
     max-height: 70vh;
     position: relative;
+}
+
+ /*====================== Styling Scrollbar for the "main-interface" ======================*/
+ .main-interface::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.main-interface::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px; 
+}
+
+.main-interface::-webkit-scrollbar-thumb {
+    background: var(--purple); 
+    border-radius: 10px;
+}
+
+.main-interface::-webkit-scrollbar-thumb:hover {
+    background: rgba(153, 122, 238, 0.822); 
 }
 
 .main-interface header{
