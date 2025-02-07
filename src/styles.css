@@ -239,14 +239,29 @@ main .added-tasks-grid-header{
     padding-bottom: 8px;
 }
 
+.added-tasks-grid .added-tasks-more-details-container{
+    background-color: var(--gray);
+    border-radius: 10px;
+}
+
+.added-tasks-more-details-container .tasks-details-section{
+    width: 80%;
+    margin: 0px auto;
+}
+
+.added-tasks-more-details-container .tasks-details-section p {
+    padding-bottom: 20px;
+    color: var(--count-fonts);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
 .added-tasks-container .added-task{
     height: auto;
     display: flex; 
     align-items: center;
     justify-content: space-between;
-    background-color: var(--gray);
-    width: 100%;
-    border-radius: 10px;
+    width: 100%;   
     padding: 20px;
     color: var(--white);
 }
