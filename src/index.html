@@ -159,27 +159,31 @@
 
     <div class="popup-container">
         <div class="popup-form-container">
+            <i class="fa-solid fa-xmark"></i>
             <form action="">
                 <label for="client-input-task">Task:
-                    <input type="text" id="client-input-task" required>
+                    <input type="text" id="client-input-task" required placeholder="Enter task">
                 </label>
 
-                <label for="client-details-field">More details(optional):
-                    <textarea name="" id="client-details-field" required></textarea>
-                </label>
+               
+                <textarea name="" id="client-details-field" placeholder="More details(optional)"></textarea>
+                
 
                 <label for="date-picker">
                     <input type="date" id="date-picker" required>
                 </label>
 
                 <div class="prioritize-tasks">
-                    <p>Priority : </p>
-                    <button>Low</button>
-                    <button>Medium</button>
-                    <button>High</button>
+                    <p>Priority Status: </p>
+                    <div class="priority-buttons">
+                        <button type="button" aria-required="true">Low</button>
+                        <button type="button">Medium</button>
+                        <button type="button">High</button>
+                    </div>
+                    
                 </div>
 
-                <button type="submit">Add Task</button>
+                <button type="submit" class="add-task-btn">Add Task</button>
             </form>
         </div>
     </div>
