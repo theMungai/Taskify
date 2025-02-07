@@ -35,6 +35,30 @@ body {
     place-items: center;
   }
 
+  /*====================== Styling Scrollbar for the whole page ======================*/
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10%; 
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 131, 245, 0.918); 
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
   .main-container{
     width: 60%;
     height: auto;
