@@ -90,18 +90,18 @@ body {
 
 .sidebar-upper-interface .all-tasks-btn:focus,
 .sidebar-upper-interface .all-tasks-btn:hover{
-    background-color: var(--purple);
+    background-color: var(--green);
 }
 
 
 .sidebar-upper-interface .completed-tasks-btn:focus,
 .sidebar-upper-interface .completed-tasks-btn:hover{
-    background-color: var(--green);
+    background-color: var(--blue);
 }
 
 .sidebar-upper-interface .pending-tasks-btn:focus,
 .sidebar-upper-interface .pending-tasks-btn:hover{
-    background-color: var(--blue);
+    background-color: var(--purple);
 }
 
 .sidebar .sidebar-upper-interface .important-tasks-btn:hover,
@@ -187,7 +187,7 @@ main .complete-pending-container p {
 }
 
 main .complete-pending-container .completed-home-container{
-    background-color: var(--green);
+    background-color: var(--blue);
     border-radius: 10px;
     padding: 20px;
     flex-basis: 50%;
@@ -203,7 +203,7 @@ main .complete-pending-container .pending-home-container{
     flex-basis: 50%;
     border-radius: 10px;
     padding: 20px;
-    background-color: var(--blue);
+    background-color: var(--purple);
 }
 
 main .tasks-progress{
@@ -300,7 +300,8 @@ main .added-tasks-grid-header{
 }
 
 .crud-task .tasks-count-down{
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 300;
     color: var(--count-fonts);
 }
 
