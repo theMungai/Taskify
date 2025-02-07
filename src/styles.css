@@ -84,13 +84,33 @@ body {
     padding-right: 20px;
 }
 
-.sidebar .sidebar-upper-interface button:hover{
-    background-color: rgba(219, 219, 219, 0.096);
-}
-
 .sidebar .sidebar-upper-interface button .tasks-count {
     color:var(--count-fonts) ;
 }
+
+.sidebar-upper-interface .all-tasks-btn:focus,
+.sidebar-upper-interface .all-tasks-btn:hover{
+    background-color: var(--purple);
+}
+
+
+.sidebar-upper-interface .completed-tasks-btn:focus,
+.sidebar-upper-interface .completed-tasks-btn:hover{
+    background-color: var(--green);
+}
+
+.sidebar-upper-interface .pending-tasks-btn:focus,
+.sidebar-upper-interface .pending-tasks-btn:hover{
+    background-color: var(--blue);
+}
+
+.sidebar .sidebar-upper-interface .important-tasks-btn:hover,
+.sidebar .sidebar-upper-interface .important-tasks-btn:focus,
+.sidebar .sidebar-upper-interface .home-btn:hover,
+.sidebar .sidebar-upper-interface .home-btn:focus{
+    background-color: rgba(219, 219, 219, 0.096);
+}
+
 
 .sidebar .sidebar-lower-interface{
     margin: 30px 20px;
