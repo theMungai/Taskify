@@ -44,6 +44,7 @@ body {
     border-radius: var(--large-border-radius);
     background-color: var(--grayish-black);
     color: --white;
+    position: relative;
 }
 
 .sidebar{
@@ -148,6 +149,9 @@ body {
 .main-interface {
     flex-basis: 75%;
     padding: 0px 30px;
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: relative;
 }
 
 .main-interface header{
