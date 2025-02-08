@@ -24,7 +24,7 @@ function initializeHomePage(){
 
         <div class="tasks-progress">
             <div class="tasks-progress-details">
-                <p>Tasks Progress</p>
+                <p class = "task-progress-header">Tasks Progress</p>
                 <p class="completed-over-all">30/40 tasks done</p>
             </div>
             
@@ -126,3 +126,16 @@ function displayTaskProgress(){
         }
     });
 }
+
+function showPopupDialog(){
+
+}
+
+function minimizeSidebar(){
+    const minimizeBtn = document.querySelector(".minimize-sidebar");
+
+    minimizeBtn.addEventListener("click", () => {
+        minimizeBtn.classList.toggle("rotate-minimize-btn");
+    });
+}
+minimizeSidebar()

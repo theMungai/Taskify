@@ -131,7 +131,10 @@ body {
 }
 
 .sidebar .sidebar-upper-interface .important-tasks-btn:hover,
-.sidebar .sidebar-upper-interface .important-tasks-btn:focus,
+.sidebar .sidebar-upper-interface .important-tasks-btn:focus{
+    background-color: var(--dark-purple);
+}
+
 .sidebar .sidebar-upper-interface .home-btn:hover,
 .sidebar .sidebar-upper-interface .home-btn:focus{
     background-color: rgba(219, 219, 219, 0.096);
@@ -166,9 +169,14 @@ body {
     float: right;
 }
 
+.sidebar-lower-interface .rotate-minimize-btn{
+    transform: rotate(180deg);
+}
+
 .sidebar .sidebar-lower-interface .add-new-tasks .fa-solid{
     padding-left: 20px;
 }
+
 
 .main-interface {
     flex-basis: 75%;
@@ -285,14 +293,14 @@ main .tasks-progress{
     justify-content: space-between;
 }
 
-main .tasks-progress .tasks-progress-details{
+main .tasks-progress .task-progress-header{
     color: var(--white);
     font-size: 1.1rem;
-    animation-name: animate-task-progress;
+    animation-name: task-progress-header;
     animation-duration: 0.9s;
 }
 
-@keyframes animate-task-progress{
+@keyframes task-progress-header{
     0%{transform: translateX(-20px);}
 }
 
@@ -300,7 +308,14 @@ main .tasks-progress .tasks-progress-details{
     color: var(--count-fonts) ;
     font-size: 0.85rem;
     padding-top: 15px;
+    animation-name: animated-completed-over-all;
+    animation-duration: 1.5s;
 }
+
+@keyframes animated-completed-over-all{
+0%{transform: translateX(-20px);}
+}
+
 
 main .added-tasks-grid{
     margin: 20px 0px;
