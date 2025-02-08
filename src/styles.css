@@ -477,3 +477,22 @@ main .added-tasks-grid-header{
     cursor: pointer;
 }
 
+/*
+ ** ================== All Tasks Section ============================ 
+ */
+
+ .js-manipulated-container header {
+    width: 100%;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 15px 20px ;
+ }
+
+ .js-manipulated-container header h1{
+    animation-name: animate-h1;
+    animation-duration: 1s;
+ }
+
+ @keyframes animate-h1{
+    0%{transform: translateX(30px);}
+ }
