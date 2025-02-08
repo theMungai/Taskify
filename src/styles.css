@@ -285,7 +285,7 @@ main .added-tasks-grid-header{
     padding-bottom: 8px;
 }
 
-.added-tasks-grid .added-tasks-more-details-container{
+.added-tasks-more-details-container{
     background-color: var(--gray);
     border-radius: 10px;
 }
@@ -302,7 +302,7 @@ main .added-tasks-grid-header{
     line-height: 1.7;
 }
 
-.added-tasks-grid .added-tasks-container{
+.added-tasks-container{
     margin: 30px 0px;
 }
 
@@ -476,3 +476,4 @@ main .added-tasks-grid-header{
     border: none;
     cursor: pointer;
 }
+
