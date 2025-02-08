@@ -303,6 +303,10 @@ main .added-tasks-grid-header{
     line-height: 1.7;
 }
 
+.added-tasks-grid .added-tasks-container{
+    margin: 30px 0px;
+}
+
 .added-tasks-container .added-task{
     height: auto;
     display: flex; 
@@ -372,13 +376,14 @@ main .added-tasks-grid-header{
     height: 100vh;
     position: fixed;
     background-color: rgba(0,0,0,0.7);
+    display: none;
 }
 
 .popup-container .popup-form-container{
-    width: 30%;
+    width: 35%;
     height: auto;
     margin: 0px auto;
-    background-color: var(--grayish-black);
+    background-color: rgb(67, 43, 133);
     border-radius: 15px;
     padding: 20px;
     position: absolute;
@@ -399,6 +404,11 @@ main .added-tasks-grid-header{
     font-size: 1.6rem;
     color: var(--white);
     cursor: pointer;
+    transition: 0.6s;
+}
+
+.popup-form-container .fa-xmark:hover{
+    transform: rotate(90deg);
 }
 
 .popup-container .popup-form-container form label {
@@ -415,6 +425,7 @@ main .added-tasks-grid-header{
     outline: none;
     margin: 10px 0px;
     font-size: 1rem;
+    background-color: rgba(212, 212, 212, 0.89);
 }
 
 .popup-container .popup-form-container input[type = "date"]{
@@ -431,6 +442,7 @@ main .added-tasks-grid-header{
     resize: none;
     min-height: 100px;
     font-size: 1rem;
+    background-color: rgba(212, 212, 212, 0.89);
 }
 
 .popup-form-container .add-task-btn{
