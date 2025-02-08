@@ -90,7 +90,7 @@ function initializeHomePage(){
     displayTaskProgress()
 }
 
-initializeHomePage()
+// initializeHomePage()
 
 
 function displayTaskProgress(){
