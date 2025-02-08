@@ -32,8 +32,6 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: grid;
-    place-items: center;
   }
 
   /*====================== Styling Scrollbar for the whole page ======================*/
@@ -70,6 +68,11 @@ body {
     background-color: var(--grayish-black);
     color: --white;
     position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 70vh;
+    overflow-y: scroll;
 }
 
 .sidebar{
@@ -79,7 +82,9 @@ body {
     background-color: var(--gray);
     border-right: 0.2px solid rgba(190, 190, 190, 0.199);
     transition: all 0.3s ease;
-    border: 2px solid red;
+    position: relative;
+    top: 0%;
+    bottom: 0%;
 }
 
 .sidebar .sidebar-upper-interface{
@@ -105,8 +110,7 @@ body {
     position: relative;
 }
 
-.sidebar .sidebar-upper-interface button .fa-solid,
-.sidebar .sidebar-upper-interface button .fa-regular {
+.sidebar .sidebar-upper-interface button i {
     font-size: 1.2rem;
     padding-right: 20px;
 }
@@ -143,7 +147,7 @@ body {
 
 
 .sidebar .sidebar-lower-interface{
-    margin: 30px 20px;
+    margin: 30px 0px;
 }
 
 .sidebar .sidebar-lower-interface button{
@@ -154,15 +158,23 @@ body {
     cursor: pointer;
 }
 
-.sidebar .sidebar-lower-interface .add-new-tasks{   
+.sidebar.activate-sidebar .sidebar-lower-interface .add-new-tasks{   
     margin: 30px auto;
     padding: 10px 15px;
     border-radius: 10px;
 }
 
+.sidebar .sidebar-lower-interface .add-new-tasks{
+    padding: 5px 10px;   
+    margin: 30px auto;
+    font-size: 1.1rem;
+    border-radius: 50%;
+}
+
+
 .sidebar-lower-interface .minimize-sidebar{
     margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 30px;
     width: 30px;
     height: 30px;
@@ -174,11 +186,6 @@ body {
 .rotate-minimize-button{
     transform: rotate(180deg);
 }
-
-.sidebar .sidebar-lower-interface .add-new-tasks .fa-solid{
-    padding-left: 20px;
-}
-
 
 .main-interface {
     width: 92%;
@@ -193,8 +200,44 @@ body {
 }
 
 .sidebar.activate-sidebar ~ .main-interface{
-    /* left: 250px; */
     width: calc(100% - 250px);
+}
+
+.sidebar.activate-sidebar .minimized-item{
+    display: block;
+}
+
+.minimized-item {
+    display: none;
+}
+.minimized-item:hover .sidebar-tool-tip{
+    display: block;
+}
+
+/* ======= Stying the tool tip */
+.sidebar .sidebar-tool-tip{
+    position: absolute;
+    left: 70px;
+    background-color: var(--white);
+    color: var(--grayish-black);
+    opacity: 0;
+    z-index: 10;
+    width: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* ========= To show a tool tip ============== */
+.sidebar .sidebar-upper-interface button:hover .sidebar-tool-tip,
+.sidebar .sidebar-lower-interface button:hover .sidebar-tool-tip{
+    opacity: 1;
+}
+
+/* ====== To hide a tool tip ======= */
+.sidebar.activate-sidebar .sidebar-upper-interface button:hover .sidebar-tool-tip,
+.sidebar.activate-sidebar .sidebar-lower-interface button:hover .sidebar-tool-tip{
+    opacity: 0;
 }
 
  /*====================== Styling Scrollbar for the "main-interface" ======================*/
