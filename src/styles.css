@@ -631,7 +631,13 @@ main .added-tasks-grid-header{
  /*
  ** ================ Completed Tasks section ======================
  */
-
  .completed-tasks-main-container header{
     background-color: var(--green);
+ }
+
+  /*
+ ** ================ Pending Tasks section ======================
+ */
+ .pending-tasks-main-container header{
+    background-color: var(--purple);
  }
