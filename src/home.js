@@ -13,12 +13,12 @@ function initializeHomePage(){
 
         <div class="complete-pending-container">
             <div class="completed-home-container">
-                <p>Completed Tasks</p>
-                <p class="completed-home-count">0</p>
+                <p class = "animate-pending-complete">Completed Tasks</p>
+                <p class="completed-home-count animate-home-count">0</p>
             </div>
             <div class="pending-home-container">
-                <p>Pending Tasks</p>
-                <p class="pending-home-count">0</p>
+                <p class = "animate-pending-complete">Pending Tasks</p>
+                <p class="pending-home-count animate-home-count">0</p>
             </div>
         </div>
 

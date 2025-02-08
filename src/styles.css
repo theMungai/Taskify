@@ -252,6 +252,27 @@ main .complete-pending-container .pending-home-container{
     background-color: var(--purple);
 }
 
+/* ========================= Animating pending and complete containers */
+
+.animate-pending-complete{
+    animation-name:animate-pending-complete ;
+    animation-duration: 0.9s;
+}
+
+@keyframes animate-pending-complete{
+    0%{transform: translateY(-25px);}
+}
+
+.animate-home-count{
+    animation-name:animate-home-count ;
+    animation-duration: 0.9s;
+}
+
+@keyframes animate-home-count{
+    0%{transform: translateY(25px);}
+}
+
+
 main .tasks-progress{
     width: 100%;
     background-color: var(--gray);

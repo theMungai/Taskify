@@ -31,7 +31,7 @@ function initializeAllTasksPage(){
                             </div>
 
                             <div class="crud-task">
-                                <p>Due date: </p>
+                                <p class = "due-date">Due date: </p>
                                 <button class="edit-tasks">
                                     Edit 
                                     <i class="fa-regular fa-pen-to-square"></i>
