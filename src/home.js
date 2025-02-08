@@ -127,15 +127,14 @@ function displayTaskProgress(){
     });
 }
 
-function showPopupDialog(){
-
-}
 
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
+    const sidebarContainer = document.querySelector(".sidebar")
 
     minimizeBtn.addEventListener("click", () => {
-        minimizeBtn.classList.toggle("rotate-minimize-btn");
+        minimizeBtn.classList.toggle("rotate-minimize-button")
+        sidebarContainer.classList.toggle("activate-sidebar");
     });
 }
 minimizeSidebar()
