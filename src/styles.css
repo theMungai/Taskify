@@ -143,7 +143,6 @@ body {
 
 .sidebar .sidebar-lower-interface button{
     display: block;
-    margin: 30px 0px;
     background-color: var(--blue);
     border: none;
     color: var(--white);
@@ -151,15 +150,14 @@ body {
 }
 
 .sidebar .sidebar-lower-interface .add-new-tasks{   
-    margin: 0px auto;
+    margin: 30px auto;
     padding: 10px 15px;
     border-radius: 10px;
-    
 }
 
 .sidebar-lower-interface .minimize-sidebar{
     margin-left: 20px;
-    margin-top: 60px;
+    margin-top: 100px;
     width: 30px;
     height: 30px;
     border-radius: 100%;
