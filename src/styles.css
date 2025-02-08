@@ -604,17 +604,20 @@ main .added-tasks-grid-header{
 /*
  ** ================== All Tasks Section ============================ 
  */
+.all-tasks-main-container header{
+    background-color: var(--blue);   
+}
 
- .js-manipulated-container header {
-    width: 100%;
-    background-color: var(--blue);
-    color: var(--white);
-    padding: 15px 20px ;
- }
 
  /* 
  ** ================ Animating JS-Manipulated Header =================
  */
+
+ .js-manipulated-container header {
+    width: 100%;   
+    padding: 15px 20px ;
+    color: var(--white);
+ }
 
  .js-manipulated-container header h1{
     animation-name: animate-h1;
@@ -623,4 +626,12 @@ main .added-tasks-grid-header{
 
  @keyframes animate-h1{
     0%{transform: translateX(30px);}
+ }
+
+ /*
+ ** ================ Completed Tasks section ======================
+ */
+
+ .completed-tasks-main-container header{
+    background-color: var(--green);
  }
