@@ -115,13 +115,13 @@ body {
 
 .sidebar-upper-interface .all-tasks-btn:focus,
 .sidebar-upper-interface .all-tasks-btn:hover{
-    background-color: var(--green);
+    background-color: var(--blue);
 }
 
 
 .sidebar-upper-interface .completed-tasks-btn:focus,
 .sidebar-upper-interface .completed-tasks-btn:hover{
-    background-color: var(--blue);
+    background-color: var(--green);
 }
 
 .sidebar-upper-interface .pending-tasks-btn:focus,
@@ -233,7 +233,7 @@ main .complete-pending-container p {
 }
 
 main .complete-pending-container .completed-home-container{
-    background-color: var(--blue);
+    background-color: var(--green);
     border-radius: 10px;
     padding: 20px;
     flex-basis: 50%;
@@ -370,6 +370,102 @@ main .added-tasks-grid-header{
     color: var(--count-fonts);
 }
 
+/* 
+** ========================= Animating the added tasks items ======================
+*/
+
+/* 
+    1.
+*/
+
+.dragging-container-icon{
+    animation-name: animating-dragging-icon;
+    animation-duration: 0.2s;
+}
+
+@keyframes animating-dragging-icon{
+    0%{transform: translateY(15px);}
+}
+
+/* 
+    2.
+*/
+
+.task-and-details-container{
+    animation-name: animating-task-and-details;
+    animation-duration: 0.4s;
+}
+
+@keyframes animating-task-and-details{
+    0%{transform: translateY(20px);}
+}
+
+/* 
+    3.
+*/
+
+.due-date{
+    animation-name: animating-due-date;
+    animation-duration: 0.6s;
+}
+
+@keyframes animating-due-date{
+    0%{transform: translateY(25px);}
+}
+
+/* 
+    4.
+*/
+
+.edit-tasks{
+    animation-name: animating-edit-tasks;
+    animation-duration: 0.8s;
+}
+
+@keyframes animating-edit-tasks{
+    0%{transform: translateY(30px);}
+}
+
+/* 
+    5.
+*/
+
+.delete-task{
+    animation-name: animating-delete-task;
+    animation-duration: 1s;
+}
+
+@keyframes animating-delete-task{
+    0%{transform: translateY(35px);}
+}
+
+/* 
+    6.
+*/
+
+.tasks-count-down{
+    animation-name: animating-tasks-count-down;
+    animation-duration: 1.2s;
+}
+
+@keyframes animating-tasks-count-down{
+    0%{transform: translateY(40px);}
+}
+
+/* 
+    7.
+*/
+
+.task-container-status{
+    animation-name: animating-task-container-status;
+    animation-duration: 1.4s;
+}
+
+@keyframes animating-task-container-status{
+    0%{transform: translateY(45px);}
+}
+
+
 .popup-container{
     width: 100%;
     height: 100vh;
@@ -483,10 +579,14 @@ main .added-tasks-grid-header{
 
  .js-manipulated-container header {
     width: 100%;
-    background-color: var(--purple);
+    background-color: var(--blue);
     color: var(--white);
     padding: 15px 20px ;
  }
+
+ /* 
+ ** ================ Animating JS-Manipulated Header =================
+ */
 
  .js-manipulated-container header h1{
     animation-name: animate-h1;

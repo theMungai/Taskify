@@ -56,7 +56,7 @@ function initializeHomePage(){
                             </div>
 
                             <div class="crud-task">
-                                <p>Due date: </p>
+                                <p class = "due-date">Due date: </p>
                                 <button class="edit-tasks">
                                     Edit 
                                     <i class="fa-regular fa-pen-to-square"></i>
@@ -72,7 +72,7 @@ function initializeHomePage(){
                         </div>
                         
                         <div class="task-container-status">
-                            <span></span>
+                            <span>ss</span>
                         </div>
                     </div>
 
@@ -103,8 +103,8 @@ function displayTaskProgress(){
             data: [40, 10],
             borderRadius : 20,
             borderWidth: 0.05,
-            backgroundColor :["rgb(49, 104, 223)","rgb(35, 34, 40)"],
-            cutout: "85%",        
+            backgroundColor :["rgb(25, 178, 122)","rgb(35, 34, 40)"],
+            cutout: "80%",        
         }]
         },
         options: {
