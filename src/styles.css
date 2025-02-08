@@ -59,7 +59,7 @@ body {
 }
 
   .main-container{
-    width: 50%;
+    width: 60%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -72,7 +72,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     max-height: 70vh;
-    overflow-y: scroll;
 }
 
 .sidebar{
@@ -93,7 +92,6 @@ body {
 }
 
 .sidebar .sidebar-upper-interface button{
-    display: block;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -104,8 +102,7 @@ body {
     color:var(--white);
     font-size: 0.95rem;
     border: none;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-radius: 50px 0px 0px 50px;
     cursor: pointer;
     position: relative;
 }
@@ -162,6 +159,11 @@ body {
     margin: 30px auto;
     padding: 10px 15px;
     border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.sidebar.activate-sidebar .sidebar-lower-interface .add-new-tasks i{
+    padding-left: 10px;
 }
 
 .sidebar .sidebar-lower-interface .add-new-tasks{
@@ -173,7 +175,7 @@ body {
 
 
 .sidebar-lower-interface .minimize-sidebar{
-    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 40px;
     margin-bottom: 30px;
     width: 30px;
@@ -196,11 +198,14 @@ body {
 }
 
 .sidebar.activate-sidebar {
-    width: 250px;
+    width: 280px;
+    position: relative;
+    top: 0%;
+    bottom: 0%;
 }
 
 .sidebar.activate-sidebar ~ .main-interface{
-    width: calc(100% - 250px);
+    width: calc(100% - 280px);
 }
 
 .sidebar.activate-sidebar .minimized-item{
@@ -240,6 +245,10 @@ body {
     opacity: 0;
 }
 
+.sidebar.activate-sidebar .button-content{
+    display: flex;
+    align-items: center;
+}
  /*====================== Styling Scrollbar for the "main-interface" ======================*/
  .main-interface::-webkit-scrollbar {
     width: 5px; 
@@ -677,7 +686,6 @@ main .added-tasks-grid-header{
 .all-tasks-main-container header{
     background-color: var(--blue);   
 }
-
 
  /* 
  ** ================ Animating JS-Manipulated Header =================
