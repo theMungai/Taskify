@@ -252,7 +252,7 @@ main .complete-pending-container .pending-home-container{
     background-color: var(--purple);
 }
 
-/* ========================= Animating pending and complete containers */
+/* =========== Animating pending and complete containers ================== */
 
 .animate-pending-complete{
     animation-name:animate-pending-complete ;
@@ -272,6 +272,7 @@ main .complete-pending-container .pending-home-container{
     0%{transform: translateY(25px);}
 }
 
+/* ========================================================================= */
 
 main .tasks-progress{
     width: 100%;
@@ -286,6 +287,12 @@ main .tasks-progress{
 main .tasks-progress .tasks-progress-details{
     color: var(--white);
     font-size: 1.1rem;
+    animation-name: animate-task-progress;
+    animation-duration: 0.9s;
+}
+
+@keyframes animate-task-progress{
+    0%{transform: translateX(-20px);}
 }
 
 .tasks-progress-details .completed-over-all{

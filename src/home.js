@@ -72,7 +72,7 @@ function initializeHomePage(){
                         </div>
                         
                         <div class="task-container-status">
-                            <span>ss</span>
+                            <span></span>
                         </div>
                     </div>
 
