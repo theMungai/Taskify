@@ -128,6 +128,16 @@ function displayTaskProgress(){
 }
 
 
+function showPopup(){
+    const popUpContainer = document.querySelector(".popup-container");
+    const addTaskBtn = document.querySelector(".add-new-tasks");
+    addTaskBtn.addEventListener("click", () => {
+        popUpContainer.style.display = "block"
+    })
+}
+
+showPopup()
+
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
     const sidebarContainer = document.querySelector(".sidebar")
