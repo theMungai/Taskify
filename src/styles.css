@@ -79,7 +79,6 @@ body {
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
     background-color: var(--gray);
-    border-right: 0.2px solid rgba(190, 190, 190, 0.199);
     transition: all 0.3s ease;
     position: relative;
     top: 0%;
@@ -198,14 +197,14 @@ body {
 }
 
 .sidebar.activate-sidebar {
-    width: 280px;
+    width: 250px;
     position: relative;
     top: 0%;
     bottom: 0%;
 }
 
 .sidebar.activate-sidebar ~ .main-interface{
-    width: calc(100% - 280px);
+    width: calc(100% - 250px);
 }
 
 .sidebar.activate-sidebar .minimized-item{
@@ -695,6 +694,8 @@ main .added-tasks-grid-header{
     width: 100%;   
     padding: 15px 20px ;
     color: var(--white);
+    border-radius: 10px;
+    font-size: 1rem;
  }
 
  .js-manipulated-container header h1{
