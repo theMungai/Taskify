@@ -127,16 +127,25 @@ function displayTaskProgress(){
     });
 }
 
-
+// Show Popup Container functionality
+const popUpContainer = document.querySelector(".popup-container");
 function showPopup(){
-    const popUpContainer = document.querySelector(".popup-container");
     const addTaskBtn = document.querySelector(".add-new-tasks");
     addTaskBtn.addEventListener("click", () => {
         popUpContainer.style.display = "block"
     })
 }
+showPopup();
 
-showPopup()
+// Hide Popup Container functionality
+
+function hidePopup(){
+    const hidePopupBtn = document.querySelector(".hide-pop-up-btn");
+    hidePopupBtn.addEventListener("click", () => {
+        popUpContainer.style.display = "none"
+    });
+}
+hidePopup();
 
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
