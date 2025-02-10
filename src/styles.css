@@ -5,13 +5,20 @@
     --blue : rgb(49, 104, 223);
     --green : rgb(25, 178, 122);
     --grayish-black : rgb(23, 23, 25);
-    --gray : rgb(35, 34, 40);
+    --gray : #232228;
     --dark-purple : rgb(74, 2, 186);
     --purple : rgb(114, 77, 217);
     --white : rgba(247, 246, 246, 0.89);
     --dark-blue : #060425;
     --count-fonts : rgba(245, 244, 244, 0.541);
     --important-tasks : rgba(201, 95, 95, 0.637);
+}
+
+.light-mode {
+    --grayish-black : rgba(255, 255, 255);
+    --gray : #D1D5DB;
+    --white : rgb(23, 23, 25);
+    --count-fonts :rgb(53, 52, 59);
 }
 
 *{
@@ -28,7 +35,7 @@ body {
     background: 
       radial-gradient(circle closest-side, rgba(25, 178, 122, 0.295) 50%, transparent),
       linear-gradient(45deg, var(--dark-purple), var(--grayish-black) 50%),
-    linear-gradient(-45deg, var(--dark-purple), var(--grayish-black) 50%);
+      linear-gradient(-45deg, var(--dark-purple), var(--grayish-black) 50%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -72,6 +79,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     max-height: 70vh;
+    transition: all 0.5s ease;
 }
 
 .sidebar{
@@ -79,7 +87,6 @@ body {
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
     background-color: var(--gray);
-    transition: all 0.3s ease;
     position: relative;
     top: 0%;
     bottom: 0%;
@@ -150,7 +157,7 @@ body {
     display: block;
     background-color: var(--blue);
     border: none;
-    color: var(--white);
+    color: rgba(247, 246, 246, 0.89);
     cursor: pointer;
 }
 
@@ -300,7 +307,7 @@ main .complete-pending-container{
 }
 
 main .complete-pending-container p {
-    color: var(--white);
+    color: rgba(247, 246, 246, 0.89);
 }
 
 main .complete-pending-container .completed-home-container{
@@ -697,7 +704,7 @@ main .added-tasks-grid-header{
  .js-manipulated-container header {
     width: 100%;   
     padding: 15px 20px ;
-    color: var(--white);
+    color: rgba(247, 246, 246, 0.89);
     border-radius: 10px;
     font-size: 1rem;
  }

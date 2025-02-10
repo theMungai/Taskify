@@ -92,7 +92,7 @@ function initializeHomePage(){
 
 initializeHomePage()
 
-
+// Task Progress doughnut chart functionality
 function displayTaskProgress(){
     const ctx = document.getElementById('myChart');
 
@@ -127,6 +127,7 @@ function displayTaskProgress(){
     });
 }
 
+
 // Show Popup Container functionality
 const popUpContainer = document.querySelector(".popup-container");
 function showPopup(){
@@ -137,8 +138,8 @@ function showPopup(){
 }
 showPopup();
 
-// Hide Popup Container functionality
 
+// Hide Popup Container functionality
 function hidePopup(){
     const hidePopupBtn = document.querySelector(".hide-pop-up-btn");
     hidePopupBtn.addEventListener("click", () => {
@@ -147,6 +148,8 @@ function hidePopup(){
 }
 hidePopup();
 
+
+//  minimize sidebar functionality
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
     const sidebarContainer = document.querySelector(".sidebar")
@@ -157,3 +160,23 @@ function minimizeSidebar(){
     });
 }
 minimizeSidebar()
+
+// Toggling dark and light theme functionality
+function togglingTheme(){
+    const lightThemeBtn = document.querySelector(".light-theme-btn");
+    const darkThemeBtn = document.querySelector(".dark-theme-btn");
+    const mainContainer = document.querySelector(".main-container");
+
+    lightThemeBtn.addEventListener("click", () => {       
+        lightThemeBtn.style.display = "none"
+        darkThemeBtn.style.display = "block"
+        mainContainer.classList.toggle("light-mode")
+    });
+
+    darkThemeBtn.addEventListener("click", () => {
+        mainContainer.classList.remove("light-mode")
+        lightThemeBtn.style.display = "block";
+        darkThemeBtn.style.display = "none"
+    })
+}
+togglingTheme()
