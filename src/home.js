@@ -37,50 +37,6 @@ function initializeHomePage(){
         <div class="added-tasks-grid">
             <p class="added-tasks-grid-header">Recently Added</p>
             <div class="added-tasks-container">
-                <div class="added-tasks-more-details-container">
-                    <div class="added-task">
-                        <div class="dragging-container-icon">
-                            <i class="fa-solid fa-grip-vertical"></i>
-                        </div>
-                        <div class="added-task-details-container">
-                            <div class="task-and-details-container">
-                                <div class="task-name">
-                                    <input type="checkbox">
-                                    Task Name
-                                </div>
-                                <div class="task-details">
-                                    <button class="task-details-btn">
-                                        More details... 
-                                    </button>
-                                </div> 
-                            </div>
-
-                            <div class="crud-task">
-                                <p class = "due-date">Due date: </p>
-                                <button class="edit-tasks">
-                                    Edit 
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-
-                                <button class="delete-task">
-                                    Delete
-                                    <i class="fa-regular fa-trash-can"></i>
-                                </button>
-                                
-                                <p class="tasks-count-down">20 days left</p>
-                            </div>
-                        </div>
-                        
-                        <div class="task-container-status">
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="tasks-details-section">
-                        <p>
-                        </p>
-                    </div>
-                </div>
                 
             </div>
         </div>
@@ -178,3 +134,81 @@ function togglingTheme(){
     })
 }
 togglingTheme()
+
+class Todo{
+    constructor(task, details,date){
+        this.task = task;
+        this.details = details;
+        this.date = date
+    }
+}
+
+const taskName = document.querySelector(".js-task-name");
+const taskDetails = document.querySelector(".js-task-details");
+const dueDate = document.querySelector(".js-due-date");
+
+const myTasks = [];
+
+function addTodo(){
+    let addedTodo = new Todo(taskName.value, taskDetails.value, dueDate.value);
+
+    let userTodo = `
+        <div class="added-tasks-more-details-container">
+            <div class="added-task">
+                <div class="dragging-container-icon">
+                    <i class="fa-solid fa-grip-vertical"></i>
+                </div>
+                <div class="added-task-details-container">
+                    <div class="task-and-details-container">
+                        <div class="task-name">
+                            <input type="checkbox">
+                            ${addedTodo.task}
+                        </div>
+                        <div class="task-details">
+                            <button class="task-details-btn">
+                                More details... 
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="crud-task">
+                        <p class = "due-date">Due date: ${addedTodo.date} </p>
+                        <button class="edit-tasks">
+                            Edit 
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
+
+                        <button class="delete-task">
+                            Delete
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                        
+                        <p class="tasks-count-down">20 days left</p>
+                    </div>
+                </div>
+                
+                <div class="task-container-status">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="tasks-details-section">
+                <p>
+                    ${addedTodo.details}
+                </p>
+            </div>
+        </div>
+
+    `;
+
+    myTasks.push(addedTodo);
+    document.querySelector(".added-tasks-container").innerHTML += userTodo
+
+    console.log(myTasks.push(addedTodo))
+}
+
+const addingTasksbtn = document.querySelector(".add-task-btn");
+addingTasksbtn.addEventListener("click", () => {
+    addTodo()   
+})
+
