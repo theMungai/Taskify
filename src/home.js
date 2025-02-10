@@ -167,12 +167,14 @@ function togglingTheme(){
     const darkThemeBtn = document.querySelector(".dark-theme-btn");
     const mainContainer = document.querySelector(".main-container");
 
-    lightThemeBtn.addEventListener("click", () => {       
-        mainContainer.classList.toggle("light-mode")
+    lightThemeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");       
+        mainContainer.classList.toggle("light-mode");
     });
 
     darkThemeBtn.addEventListener("click", () => {
-        mainContainer.classList.remove("light-mode")
+        mainContainer.classList.remove("light-mode");
+        document.body.classList.remove("light-mode")
     })
 }
 togglingTheme()
