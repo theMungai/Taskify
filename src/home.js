@@ -168,15 +168,11 @@ function togglingTheme(){
     const mainContainer = document.querySelector(".main-container");
 
     lightThemeBtn.addEventListener("click", () => {       
-        lightThemeBtn.style.display = "none"
-        darkThemeBtn.style.display = "block"
         mainContainer.classList.toggle("light-mode")
     });
 
     darkThemeBtn.addEventListener("click", () => {
         mainContainer.classList.remove("light-mode")
-        lightThemeBtn.style.display = "block";
-        darkThemeBtn.style.display = "none"
     })
 }
 togglingTheme()
