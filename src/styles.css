@@ -146,22 +146,26 @@ body {
 .sidebar-upper-interface .all-tasks-btn:focus,
 .sidebar-upper-interface .all-tasks-btn:hover{
     background-color: var(--blue);
+    color: white;
 }
 
 
 .sidebar-upper-interface .completed-tasks-btn:focus,
 .sidebar-upper-interface .completed-tasks-btn:hover{
     background-color: var(--green);
+    color: white;
 }
 
 .sidebar-upper-interface .pending-tasks-btn:focus,
 .sidebar-upper-interface .pending-tasks-btn:hover{
     background-color: var(--purple);
+    color: white;
 }
 
 .sidebar .sidebar-upper-interface .important-tasks-btn:hover,
 .sidebar .sidebar-upper-interface .important-tasks-btn:focus{
     background-color: var(--dark-purple);
+    color: white;
 }
 
 .sidebar .sidebar-upper-interface .home-btn:hover,
