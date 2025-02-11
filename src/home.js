@@ -147,7 +147,8 @@ const taskName = document.querySelector(".js-task-name");
 const taskDetails = document.querySelector(".js-task-details");
 const dueDate = document.querySelector(".js-due-date");
 
-const myTasks = [];
+const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
 
 function addTodo(){
     let addedTodo = new Todo(taskName.value, taskDetails.value, dueDate.value);
@@ -202,9 +203,9 @@ function addTodo(){
     `;
 
     myTasks.push(addedTodo);
+    localStorage.setItem("tasks", JSON.stringify(myTasks))
     document.querySelector(".added-tasks-container").innerHTML += userTodo
 
-    console.log(myTasks.push(addedTodo))
 }
 
 const addingTasksbtn = document.querySelector(".add-task-btn");

@@ -706,6 +706,7 @@ main .added-tasks-grid-header{
     color: rgba(247, 246, 246, 0.89);
     border-radius: 10px;
     font-size: 1rem;
+    margin-bottom: 30px;
  }
 
  .js-manipulated-container header h1{
