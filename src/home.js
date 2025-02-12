@@ -102,8 +102,6 @@ function hidePopup(){
         popUpContainer.style.display = "none"
     });
 }
-hidePopup();
-
 
 //  minimize sidebar functionality
 function minimizeSidebar(){
@@ -210,6 +208,29 @@ function addTodo(){
 
 const addingTasksbtn = document.querySelector(".add-task-btn");
 addingTasksbtn.addEventListener("click", () => {
-    addTodo()   
-})
+    addTodo()
+    hidePopup()   
+});
+
+function updateTaskCounts() {
+    const completedTasks = myTasks.filter(task => task.completed).length;
+    const pendingTasks = myTasks.length - completedTasks;
+
+    document.querySelector(".completed-home-count").textContent = completedTasks;
+    document.querySelector(".pending-home-count").textContent = pendingTasks;
+
+    // Update task progress chart
+    const totalTasks = myTasks.length;
+    const completedPercentage = totalTasks ? (completedTasks / totalTasks) * 100 : 0;
+
+    // Update chart data dynamically
+    const ctx = document.getElementById('myChart');
+    const chart = Chart.getChart(ctx);
+    chart.data.datasets[0].data = [completedPercentage, 100 - completedPercentage];
+    chart.update();
+}
+
+// Call updateTaskCounts on page load and after adding a task
+initializeHomePage();
+updateTaskCounts();
 

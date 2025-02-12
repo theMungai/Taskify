@@ -427,7 +427,11 @@ main .added-tasks-grid-header{
     background-color: var(--gray);
     border-radius: 10px;
     margin-bottom: 30px;
-    
+    transition: 0.6s;
+}
+
+.added-tasks-more-details-container:hover{
+    transform: translateX(10px);
 }
 
 .added-tasks-more-details-container .tasks-details-section{
@@ -735,6 +739,7 @@ main .added-tasks-grid-header{
 /*
  ** ================ Pending Tasks section ======================
  */
+ 
  .important-tasks-main-container header{
     background-color: var(--dark-purple);
  }
