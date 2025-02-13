@@ -743,3 +743,24 @@ main .added-tasks-grid-header{
  .important-tasks-main-container header{
     background-color: var(--dark-purple);
  }
+
+ /* 
+ ** ==================== styling radio ========================
+ */
+
+input[type="radio"] {
+    -webkit-appearance: none; /* Remove default radio button appearance */
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--purple); 
+    border-radius: 50%; 
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s; 
+  }
+  
+  input[type="radio"]:checked {
+    background-color: var(--green); 
+    border-color: transparent; 
+  }

@@ -2,7 +2,9 @@ const homePage = document.querySelector(".js-manipulated-container");
 const homeButton = document.querySelector(".home-btn");
 
 homeButton.addEventListener("click", () => {
+    initializeHomePage()
     renderTasks()
+    displayTaskProgress()
 })
 
 function initializeHomePage(){
@@ -43,7 +45,7 @@ function initializeHomePage(){
     `;
 
     homePage.innerHTML = homeHTML
-    displayTaskProgress()
+    
 }
 
 initializeHomePage()
@@ -82,6 +84,8 @@ function displayTaskProgress(){
         }
     });
 }
+
+displayTaskProgress()
 
 
 // Show Popup Container functionality
@@ -166,12 +170,12 @@ function addTodo(){
                 <div class="added-task-details-container">
                     <div class="task-and-details-container">
                         <div class="task-name">
-                            <input type="checkbox">
+                            <input type="radio">
                             ${addedTodo.task}
                         </div>
                         <div class="task-details">
                             <button class="task-details-btn">
-                                More details... 
+                                Show more... 
                             </button>
                         </div> 
                     </div>
@@ -226,12 +230,12 @@ function renderTasks(){
                 <div class="added-task-details-container">
                     <div class="task-and-details-container">
                         <div class="task-name">
-                            <input type="checkbox">
+                            <input type="radio">
                             ${task.task}
                         </div>
                         <div class="task-details">
                             <button class="task-details-btn">
-                                More details... 
+                                Show more... 
                             </button>
                         </div> 
                     </div>
