@@ -2,7 +2,7 @@ const homePage = document.querySelector(".js-manipulated-container");
 const homeButton = document.querySelector(".home-btn");
 
 homeButton.addEventListener("click", () => {
-    initializeHomePage()
+    renderTasks()
 })
 
 function initializeHomePage(){
@@ -133,6 +133,14 @@ function togglingTheme(){
 }
 togglingTheme()
 
+const addingTasksbtn = document.querySelector(".add-task-btn");
+addingTasksbtn.addEventListener("click", () => {
+    addTodo()
+    hidePopup()   
+});
+
+const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
 class Todo{
     constructor(task, details,date){
         this.task = task;
@@ -144,8 +152,6 @@ class Todo{
 const taskName = document.querySelector(".js-task-name");
 const taskDetails = document.querySelector(".js-task-details");
 const dueDate = document.querySelector(".js-due-date");
-
-const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 
 function addTodo(){
@@ -206,31 +212,88 @@ function addTodo(){
 
 }
 
-const addingTasksbtn = document.querySelector(".add-task-btn");
-addingTasksbtn.addEventListener("click", () => {
-    addTodo()
-    hidePopup()   
-});
 
-function updateTaskCounts() {
-    const completedTasks = myTasks.filter(task => task.completed).length;
-    const pendingTasks = myTasks.length - completedTasks;
+function renderTasks(){
+    const addedTasksContainer = document.querySelector(".added-tasks-container");
+    addedTasksContainer.innerHTML = ""
+    myTasks.forEach((task) => {
+        const userTodo = `
+            <div class="added-tasks-more-details-container">
+            <div class="added-task">
+                <div class="dragging-container-icon">
+                    <i class="fa-solid fa-grip-vertical"></i>
+                </div>
+                <div class="added-task-details-container">
+                    <div class="task-and-details-container">
+                        <div class="task-name">
+                            <input type="checkbox">
+                            ${task.task}
+                        </div>
+                        <div class="task-details">
+                            <button class="task-details-btn">
+                                More details... 
+                            </button>
+                        </div> 
+                    </div>
 
-    document.querySelector(".completed-home-count").textContent = completedTasks;
-    document.querySelector(".pending-home-count").textContent = pendingTasks;
+                    <div class="crud-task">
+                        <p class = "due-date">Due date: ${task.date} </p>
+                        <button class="edit-tasks">
+                            Edit 
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
 
-    // Update task progress chart
-    const totalTasks = myTasks.length;
-    const completedPercentage = totalTasks ? (completedTasks / totalTasks) * 100 : 0;
+                        <button class="delete-task">
+                            Delete
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                        
+                        <p class="tasks-count-down">20 days left</p>
+                    </div>
+                </div>
+                
+                <div class="task-container-status">
+                    <span></span>
+                </div>
+            </div>
 
-    // Update chart data dynamically
-    const ctx = document.getElementById('myChart');
-    const chart = Chart.getChart(ctx);
-    chart.data.datasets[0].data = [completedPercentage, 100 - completedPercentage];
-    chart.update();
+            <div class="tasks-details-section">
+                <p>
+                    ${task.details}
+                </p>
+            </div>
+        </div>
+        `;
+
+        addedTasksContainer.innerHTML += userTodo
+    })
 }
 
-// Call updateTaskCounts on page load and after adding a task
-initializeHomePage();
-updateTaskCounts();
 
+// function updateTaskCounts() {
+//     const completedTasks = myTasks.filter(task => task.completed).length;
+//     const pendingTasks = myTasks.length - completedTasks;
+
+//     document.querySelector(".completed-home-count").textContent = completedTasks;
+//     document.querySelector(".pending-home-count").textContent = pendingTasks;
+
+//     // Update task progress chart
+//     const totalTasks = myTasks.length;
+//     const completedPercentage = totalTasks ? (completedTasks / totalTasks) * 100 : 0;
+
+//     // Update chart data dynamically
+//     const ctx = document.getElementById('myChart');
+//     const chart = Chart.getChart(ctx);
+//     chart.data.datasets[0].data = [completedPercentage, 100 - completedPercentage];
+//     chart.update();
+// }
+
+// Call updateTaskCounts on page load and after adding a task
+// initializeHomePage();
+// updateTaskCounts();
+
+console.log(myTasks)
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderTasks()
+})
