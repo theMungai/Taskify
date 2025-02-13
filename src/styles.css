@@ -437,6 +437,7 @@ main .added-tasks-grid-header{
 .added-tasks-more-details-container .tasks-details-section{
     width: 80%;
     margin: 0px auto;
+    display: none;
 }
 
 .added-tasks-more-details-container .tasks-details-section p {
@@ -466,11 +467,12 @@ main .added-tasks-grid-header{
     flex-basis: 88%;
     display: flex;
     justify-content: space-between;
-    
+    font-size: 0.8rem;
+    color: var(--count-fonts);  
 }
 
 .added-task-details-container .task-and-details-container{
-    flex-basis: 25%;  
+    flex-basis: 25%;
 }
 
 .task-details .task-details-btn{
@@ -478,10 +480,14 @@ main .added-tasks-grid-header{
     font-size: 0.75rem;
     background-color: transparent;
     border: none;
+    
 }
 
 .added-task .task-container-status{
-    flex-basis: 2%;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: var(--purple);
 }
 
 .added-task .crud-task{
@@ -489,15 +495,15 @@ main .added-tasks-grid-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+     
 }
 
 .added-task .crud-task button{
     cursor: pointer;
     background-color: transparent;
     border: none;
-    color: var(--white);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: var(--count-fonts); 
 }
 
 .added-task .crud-task .fa-regular{
@@ -748,7 +754,7 @@ main .added-tasks-grid-header{
  ** ==================== styling radio ========================
  */
 
-input[type="radio"] {
+input[type="checkbox"] {
     -webkit-appearance: none; /* Remove default radio button appearance */
     -moz-appearance: none;
     appearance: none;
@@ -760,7 +766,7 @@ input[type="radio"] {
     transition: background-color 0.3s, border-color 0.3s; 
   }
   
-  input[type="radio"]:checked {
+  input[type="checkbox"]:checked {
     background-color: var(--green); 
     border-color: transparent; 
   }

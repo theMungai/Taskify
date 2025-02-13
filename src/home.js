@@ -170,7 +170,7 @@ function addTodo(){
                 <div class="added-task-details-container">
                     <div class="task-and-details-container">
                         <div class="task-name">
-                            <input type="radio">
+                            <input type="checkbox">
                             ${addedTodo.task}
                         </div>
                         <div class="task-details">
@@ -230,7 +230,7 @@ function renderTasks(){
                 <div class="added-task-details-container">
                     <div class="task-and-details-container">
                         <div class="task-name">
-                            <input type="radio">
+                            <input type="checkbox">
                             ${task.task}
                         </div>
                         <div class="task-details">
