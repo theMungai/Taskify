@@ -307,23 +307,24 @@ function renderTasks(){
         })
 
         // Toggling show more details button
-    const taskDetailsContainer = document.querySelectorAll(".tasks-details-section");
-    const taskDetailsBtn = document.querySelectorAll(".task-details-btn");
+    const taskDetailsHouse = document.querySelectorAll(".added-tasks-more-details-container");
 
-    taskDetailsBtn.forEach((button) => {
-        button.addEventListener("click", () => {
-            taskDetailsContainer.forEach((container) => {
-                container.classList.toggle("show-more-details")
-            })
-            
-            if(button.textContent === "Show less..."){
-                button.textContent = "Show more..."
+    taskDetailsHouse.forEach((container) => {
+        const taskDetails = container.querySelector(".tasks-details-section");
+        const taskDetailsBtn = container.querySelector(".task-details-btn");
+
+        taskDetailsBtn.addEventListener("click", () => {
+            taskDetails.classList.toggle("show-more-details");
+
+            if(taskDetailsBtn.textContent === "Show less..."){
+                taskDetailsBtn.textContent = "Show more..."
             }
             else{
-                button.textContent = "Show less..."
+                taskDetailsBtn.textContent = "Show less..."
             }
         })
     })
+   
 }
 
 
