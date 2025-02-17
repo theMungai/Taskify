@@ -1176,3 +1176,19 @@ input[type="checkbox"] {
     }
 
 }
+
+/* =================== Tablet Portrait ======================= */
+@media (min-width : 768px) and (max-width : 991px){
+    .main-container{
+        width: 90%;
+        height: auto;
+    }
+
+    .popup-container .popup-form-container{
+        width: 60%;
+    }
+
+    .tasks-removed-items{
+        display: none;
+    }
+}
