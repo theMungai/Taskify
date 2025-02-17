@@ -1031,7 +1031,7 @@ input[type="checkbox"] {
 
     .main-interface {
         width: 100%;
-        padding:30px 10px;
+        padding:30px 20px;
         min-height: 100vh;
         position: relative;
     }
@@ -1191,4 +1191,17 @@ input[type="checkbox"] {
     .tasks-removed-items{
         display: none;
     }
+}
+
+/* =================== Tablet Landscape ======================= */
+@media (min-width : 992px) and (max-width : 1199px){
+    .main-container{
+        width: 90%;
+        height: auto;
+    }
+
+    .popup-container .popup-form-container{
+        width: 60%;
+    }
+
 }
