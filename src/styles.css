@@ -758,12 +758,13 @@ input[type="checkbox"] {
     -webkit-appearance: none; /* Remove default radio button appearance */
     -moz-appearance: none;
     appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 12px;
+    height: 12px;
     border: 2px solid var(--purple); 
     border-radius: 50%; 
     outline: none;
-    transition: background-color 0.3s, border-color 0.3s; 
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer; 
   }
   
   input[type="checkbox"]:checked {

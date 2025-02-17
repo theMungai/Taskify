@@ -106,7 +106,7 @@ function hidePopup(){
         popUpContainer.style.display = "none"
     });
 }
-
+hidePopup()
 //  minimize sidebar functionality
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
@@ -216,11 +216,16 @@ function addTodo(){
 
 }
 
+function deleteTask(index){
+    myTasks.splice(index,1);
+    localStorage.setItem("tasks", JSON.stringify(myTasks))
+    renderTasks()
+}
 
 function renderTasks(){
     const addedTasksContainer = document.querySelector(".added-tasks-container");
     addedTasksContainer.innerHTML = ""
-    myTasks.forEach((task) => {
+    myTasks.forEach((task,index) => {
         const userTodo = `
             <div class="added-tasks-more-details-container">
             <div class="added-task">
@@ -247,7 +252,7 @@ function renderTasks(){
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
 
-                        <button class="delete-task">
+                        <button class="delete-task" data-index = "${index}">
                             Delete
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
@@ -271,6 +276,16 @@ function renderTasks(){
 
         addedTasksContainer.innerHTML += userTodo
     })
+
+    const deleteTaskBtn = document.querySelectorAll(".delete-task");
+        deleteTaskBtn.forEach((button) => {
+            button.addEventListener("click", () => {
+                const index = button.dataset.index;
+                deleteTask(index)
+                console.log("Simon");
+                
+            })
+        })
 }
 
 
