@@ -1205,3 +1205,16 @@ input[type="checkbox"] {
     }
 
 }
+
+/* =================== Small Laptop ======================= */
+@media (min-width : 1200px) and (max-width : 1399px){
+    .main-container{
+        width: 70%;
+        height: auto;
+    }
+
+    .popup-container .popup-form-container{
+        width: 50%;
+    }
+
+}
