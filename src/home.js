@@ -87,6 +87,15 @@ function displayTaskProgress(){
 
 displayTaskProgress()
 
+// Increase textarea height functionality
+function increaseTeaxtAreaHeight(){
+    const textArea = document.querySelector("textarea");
+    textArea.addEventListener("input", () => {
+        textArea.style.height = "auto";
+        textArea.style.height = (textArea.scrollHeight) + "px"
+    })
+}
+increaseTeaxtAreaHeight()
 
 // Show Popup Container functionality
 const popUpContainer = document.querySelector(".popup-container");
