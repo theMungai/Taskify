@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 :root{
@@ -481,6 +481,9 @@ main .added-tasks-grid-header{
     width: 80%;
     margin: 0px auto;
     display: none;
+}
+.tasks-details-section.show-more-details{
+    display: block;
 }
 
 .added-tasks-more-details-container .tasks-details-section p {

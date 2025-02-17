@@ -225,6 +225,7 @@ function addTodo(){
 
 }
 
+
 function deleteTask(index){
     myTasks.splice(index,1);
     localStorage.setItem("tasks", JSON.stringify(myTasks))
@@ -295,6 +296,25 @@ function renderTasks(){
                 
             })
         })
+
+        // Toggling show more details button
+    const taskDetailsContainer = document.querySelectorAll(".tasks-details-section");
+    const taskDetailsBtn = document.querySelectorAll(".task-details-btn");
+
+    taskDetailsBtn.forEach((button) => {
+        button.addEventListener("click", () => {
+            taskDetailsContainer.forEach((container) => {
+                container.classList.toggle("show-more-details")
+            })
+            
+            if(button.textContent === "Show less..."){
+                button.textContent = "Show more..."
+            }
+            else{
+                button.textContent = "Show less..."
+            }
+        })
+    })
 }
 
 
