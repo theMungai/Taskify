@@ -22,28 +22,28 @@ function initializeImportantTasksPage(){
                             <div class="task-and-details-container">
                                 <div class="task-name">
                                     <input type="checkbox">
-                                    Task Name
+                                    Task
                                 </div>
                                 <div class="task-details">
                                     <button class="task-details-btn">
-                                        More details... 
+                                        <span class = "tasks-removed-items">Show </span>more... 
                                     </button>
                                 </div> 
                             </div>
 
                             <div class="crud-task">
-                                <p class = "due-date">Due date: </p>
+                                <p class = "due-date">Due <span class = "tasks-removed-items">date</span>:</p>
                                 <button class="edit-tasks">
-                                    Edit 
+                                    <span class = "tasks-removed-items">Edit</span> 
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </button>
 
                                 <button class="delete-task">
                                     Delete
-                                    <i class="fa-regular fa-trash-can"></i>
+                                    <span class = "tasks-removed-items">Delete</span>
                                 </button>
                                 
-                                <p class="tasks-count-down">20 days left</p>
+                                <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
                             </div>
                         </div>
                         
@@ -59,6 +59,7 @@ function initializeImportantTasksPage(){
                 </div>
                 
             </div>
+
         </div>
     `;
 

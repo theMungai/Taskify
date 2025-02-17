@@ -106,9 +106,9 @@ body {
     width: 80px;
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
+    border-right: 0.03px solid var(--count-fonts);
     background-color: var(--gray);
     position: relative;
-    left: -85px;
     top: 0%;
     bottom: 0%;
     transition: all 0.5s ease;
@@ -128,16 +128,16 @@ body {
 .toggle-sidebar{
     position: absolute;
     top: 1%;
-    left: 0%;
+    left: 5%;
     cursor: pointer;
-    background-color: var(--grayish-black);
+    background-color: transparent;
     border: none;
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 5px;
     transition: all 0.6s ease;
     z-index: 10;
-    /* display: none; */
+    display: none;
 }
 
 .sidebar .sidebar-upper-interface button{
@@ -228,6 +228,7 @@ body {
 
 
 .sidebar-lower-interface .minimize-sidebar{
+    display: block;
     margin-right: 20px;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -450,7 +451,7 @@ main .added-tasks-grid-header{
     background-color: var(--gray);
     border-radius: 10px;
     margin-bottom: 30px;
-    transition: 0.6s;
+    transition: 0.3s;
 }
 
 .added-tasks-more-details-container:hover{
@@ -714,9 +715,13 @@ main .added-tasks-grid-header{
 }
 
 .popup-form-container .add-task-btn{
+    background-color: var(--green);
+    color: var(--white);
     float: right;
     padding: 10px 25px;
+    margin-top: 30px;
     font-size: 1rem;
+    font-weight: 600;
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -794,3 +799,186 @@ input[type="checkbox"] {
     background-color: var(--green); 
     border-color: transparent; 
   }
+
+
+/* =================== Media Queries ========================= */
+/* =================== Mobile Portrait ======================= */
+@media (max-width : 480px){
+    .main-container{
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-radius: 0px;
+        min-height: 100vh;
+    }
+    .sidebar{
+        position: absolute;
+        left: -90px;
+        z-index: 12;
+    }
+
+    .sidebar.sidebar-switch{
+        position:absolute;
+        left: 0px;
+        transition: 0.6s;
+    }
+
+    .toggle-sidebar{
+        z-index: 20;
+        display: block;
+    }
+
+    .sidebar .sidebar-upper-interface button{
+        padding: 8px 20px;
+    }
+
+    .sidebar-lower-interface .minimize-sidebar{
+        display: none;
+    }
+    .main-interface {
+        width: 100%;
+        padding:30px 10px;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .sidebar.activate-sidebar {
+        width: 240px;
+        position: absolute;
+    }
+
+    .sidebar.activate-sidebar ~ .main-interface{
+        width: 100%;
+    }
+
+    .main-interface header h1{
+        font-size: 1.7rem;
+    }
+    .main-interface header img{
+        width: 20px;
+    }
+
+    main .home-message{
+        font-size: 1rem;
+    }
+
+    main .complete-pending-container .completed-home-container{
+        padding: 10px;
+    }
+
+    .completed-home-container .completed-home-count,
+    .pending-home-container .pending-home-count{
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    main .complete-pending-container .pending-home-container{
+        padding: 10px;
+    }
+
+    /* =========== Animating pending and complete containers ================== */
+
+    .animate-pending-complete{
+        font-size: 0.9rem;
+    }
+
+    @keyframes animate-pending-complete{
+        0%{transform: translateY(-10px);}
+    }
+
+    @keyframes animate-home-count{
+        0%{transform: translateY(10px);}
+    }
+
+    /* ========================================================================= */
+
+    main .tasks-progress .task-progress-header{
+        color: var(--white);
+        font-size: 1rem;
+    }
+
+    main .added-tasks-grid-header{
+        font-size: 1.1rem;
+    }
+
+    .added-tasks-more-details-container{
+        margin-bottom: 20px;
+    }
+
+    .added-tasks-more-details-container .tasks-details-section{
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .added-tasks-container .added-task{
+        padding: 10px;
+    }
+
+    .added-task .fa-grip-vertical{
+        flex-basis: 0%;
+        display: none;
+    }
+
+    .tasks-removed-items{
+        display: none;
+    }
+
+    .added-task .added-task-details-container{
+        flex-basis: 95%;
+    }
+
+    .added-task .crud-task .fa-regular{
+        padding-left: 8px;
+    }
+    /* 
+    ** ========================= Animating the added tasks items ======================
+    */
+
+    @keyframes animating-task-and-details{
+        0%{transform: translateY(4px);}
+    }
+
+    @keyframes animating-due-date{
+        0%{transform: translateY(8px);}
+    }
+
+    @keyframes animating-edit-tasks{
+        0%{transform: translateY(12px);}
+    }
+
+    @keyframes animating-delete-task{
+        0%{transform: translateY(16px);}
+    }
+
+    @keyframes animating-tasks-count-down{
+        0%{transform: translateY(20px);}
+    }
+
+    @keyframes animating-task-container-status{
+        0%{transform: translateY(24px);}
+    }
+
+    .popup-container .popup-form-container{
+        width: 95%;
+    }
+
+    .popup-container .popup-form-container form{
+        padding: 0px;
+    }
+
+    .popup-container .popup-form-container input,
+    .popup-container .popup-form-container textarea{
+        font-size: 0.9rem;
+    }
+    /* 
+    ** ================ Animating JS-Manipulated Header =================
+    */
+
+    .js-manipulated-container header {
+        margin-bottom: 20px;
+    }
+
+    .js-manipulated-container header h1{
+        font-size: 1.4rem;
+    }
+
+}

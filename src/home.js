@@ -184,24 +184,24 @@ function addTodo(){
                         </div>
                         <div class="task-details">
                             <button class="task-details-btn">
-                                Show more... 
+                                <span class = "tasks-removed-items">Show </span>more... 
                             </button>
                         </div> 
                     </div>
 
                     <div class="crud-task">
-                        <p class = "due-date">Due date: ${addedTodo.date} </p>
+                        <p class = "due-date">Due <span class = "tasks-removed-items">date</span>: ${addedTodo.date} </p>
                         <button class="edit-tasks">
-                            Edit 
+                            <span class = "tasks-removed-items">Edit</span>
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
 
                         <button class="delete-task">
-                            Delete
+                            <span class = "tasks-removed-items">Delete</span>
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                         
-                        <p class="tasks-count-down">20 days left</p>
+                        <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
                     </div>
                 </div>
                 
@@ -249,24 +249,24 @@ function renderTasks(){
                         </div>
                         <div class="task-details">
                             <button class="task-details-btn">
-                                Show more... 
+                                <span class = "tasks-removed-items">Show </span>more... 
                             </button>
                         </div> 
                     </div>
 
                     <div class="crud-task">
-                        <p class = "due-date">Due date: ${task.date} </p>
+                        <p class = "due-date">Due <span class = "tasks-removed-items">date</span>: ${task.date} </p>
                         <button class="edit-tasks">
-                            Edit 
+                            <span class = "tasks-removed-items">Edit</span>
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
 
                         <button class="delete-task" data-index = "${index}">
-                            Delete
+                            <span class = "tasks-removed-items">Delete</span>
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                         
-                        <p class="tasks-count-down">20 days left</p>
+                        <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
                     </div>
                 </div>
                 
