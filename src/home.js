@@ -107,10 +107,11 @@ function hidePopup(){
     });
 }
 hidePopup()
+
 //  minimize sidebar functionality
+const sidebarContainer = document.querySelector(".sidebar")
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
-    const sidebarContainer = document.querySelector(".sidebar")
 
     minimizeBtn.addEventListener("click", () => {
         minimizeBtn.classList.toggle("rotate-minimize-button")
@@ -118,6 +119,14 @@ function minimizeSidebar(){
     });
 }
 minimizeSidebar()
+
+function toggleSidebar(){
+    const toggleSidebarBtn = document.querySelector(".toggle-sidebar")
+    toggleSidebarBtn.addEventListener("click", () => {
+        sidebarContainer.classList.toggle("sidebar-switch")
+    })
+}
+toggleSidebar()
 
 // Toggling dark and light theme functionality
 function togglingTheme(){
