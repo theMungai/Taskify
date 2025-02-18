@@ -37,15 +37,15 @@
     box-shadow: 0 0 0 5px rgb(219, 219, 219);
 }
 
-.theme-controls img:first-child{
+.theme-controls box-icon:first-child{
     display: none;
 }
 
-.light-mode .theme-controls img:first-child{
+.light-mode .theme-controls box-icon:first-child{
     display: block;
 }
 
-.light-mode .theme-controls img:last-child{
+.light-mode .theme-controls box-icon:last-child{
     display: none;
 }
 
@@ -352,8 +352,7 @@ body {
     color: var(--purple);
 }
 
-.main-interface header img{
-    width: 25px;
+.main-interface header box-icon{
     cursor: pointer;
 }
 
@@ -473,10 +472,6 @@ main .added-tasks-grid-header{
     border-radius: 10px;
     margin-bottom: 30px;
     transition: 0.3s;
-}
-
-.added-tasks-more-details-container:hover{
-    transform: translateX(10px);
 }
 
 .added-tasks-more-details-container .tasks-details-section{

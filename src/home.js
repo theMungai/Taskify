@@ -265,6 +265,7 @@ function editTasks(){
     dueDate.addEventListener("input", () => {
         localStorage.setItem("date", this.value)
     })
+    console.log(localStorage)
 }
 
 
@@ -324,7 +325,19 @@ function renderTasks(){
         addedTasksContainer.innerHTML += userTodo
     })
 
-    //  Delete Tasks Functionality
+    //================ Edit Tasks Functionality ==================================
+    const addedTasks = document.querySelectorAll(".added-tasks-more-details-container");
+    addedTasks.forEach((container) => {
+        const editTasksBtn = container.querySelector(".edit-tasks");
+        const popupDialog = container.querySelector(".popup-container")
+
+        editTasksBtn.addEventListener("click", () => {
+            editTasks()
+            
+        })
+    })
+
+    //================ Delete Tasks Functionality ================================
     const deleteTaskBtn = document.querySelectorAll(".delete-task");
         deleteTaskBtn.forEach((button) => {
             button.addEventListener("click", () => {
@@ -333,7 +346,7 @@ function renderTasks(){
             })
         })
 
-        // Toggling show more details button
+    //================= Toggling show more details button ======================================
     const taskDetailsHouse = document.querySelectorAll(".added-tasks-more-details-container");
 
     taskDetailsHouse.forEach((container) => {
@@ -376,8 +389,6 @@ function renderTasks(){
 // Call updateTaskCounts on page load and after adding a task
 // initializeHomePage();
 // updateTaskCounts();
-
-console.log(myTasks)
 
 document.addEventListener("DOMContentLoaded", () => {
     renderTasks()
