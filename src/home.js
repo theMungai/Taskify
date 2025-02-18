@@ -234,13 +234,41 @@ function addTodo(){
 
 }
 
-
+//=================== Delete Tasks from localStorage functionality ==================== 
 function deleteTask(index){
     myTasks.splice(index,1);
     localStorage.setItem("tasks", JSON.stringify(myTasks))
     renderTasks()
 }
 
+//=========================== Edit tasks logic ===========================
+function editTasks(){
+    if(localStorage.getItem("name")){
+        taskName.value = localStorage.getItem("name")
+    }
+
+    else if(localStorage.getItem("details")){
+        taskDetails.value = localStorage.getItem("details")
+    }
+    else if(localStorage.getItem("date")){
+        dueDate.value = localStorage.getItem("date")
+    }
+
+    taskName.addEventListener("input", () => {
+        localStorage.setItem("name", this.value)
+    })
+
+    taskDetails.addEventListener("input", () => {
+        localStorage.setItem("details", this.value)
+    })
+
+    dueDate.addEventListener("input", () => {
+        localStorage.setItem("date", this.value)
+    })
+}
+
+
+//====================== Render Tasks to the DOM from localStorage ====================
 function renderTasks(){
     const addedTasksContainer = document.querySelector(".added-tasks-container");
     addedTasksContainer.innerHTML = ""
@@ -296,13 +324,12 @@ function renderTasks(){
         addedTasksContainer.innerHTML += userTodo
     })
 
+    //  Delete Tasks Functionality
     const deleteTaskBtn = document.querySelectorAll(".delete-task");
         deleteTaskBtn.forEach((button) => {
             button.addEventListener("click", () => {
                 const index = button.dataset.index;
-                deleteTask(index)
-                console.log("Simon");
-                
+                deleteTask(index)     
             })
         })
 
