@@ -39,8 +39,8 @@ function initializeCompletedTasksPage(){
                                 </button>
 
                                 <button class="delete-task">
-                                    Delete
                                     <span class = "tasks-removed-items">Delete</span>
+                                    <i class="fa-regular fa-trash-can"></i>
                                 </button>
                                 
                                 <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
