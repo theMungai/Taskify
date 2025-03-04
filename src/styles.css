@@ -170,6 +170,7 @@ body {
     color:var(--white);
     font-size: 0.95rem;
     border: none;
+    outline: none;
     border-radius: 50px 0px 0px 50px;
     cursor: pointer;
     position: relative;
@@ -224,6 +225,7 @@ body {
     display: block;
     background-color: var(--blue);
     border: none;
+    outline: none;
     color: rgba(247, 246, 246, 0.89);
     cursor: pointer;
 }
