@@ -736,6 +736,26 @@ main .added-tasks-grid-header{
     background-color: rgba(212, 212, 212, 0.89);
 }
 
+.mark-important-button{
+    width: 20px;
+    border: 2px solid red;
+}
+
+.important-button-label{
+    display: inline;
+}
+.popup-form-container .important-label{
+    font-size: 0.9rem;
+}
+
+.popup-form-container input[type="checkbox"]{
+    width: 14px;
+    height: 14px;
+    display: inline;
+    margin-right: 5px; 
+}
+
+
 .popup-form-container .add-task-btn{
     background-color: var(--green);
     color: white;
@@ -804,7 +824,7 @@ main .added-tasks-grid-header{
  ** ==================== styling radio ========================
  */
 
-input[type="checkbox"] {
+.task-and-details-container input[type="checkbox"] {
     -webkit-appearance: none; /* Remove default radio button appearance */
     -moz-appearance: none;
     appearance: none;
