@@ -41,6 +41,7 @@
     display: none;
 }
 
+
 .light-mode .theme-controls box-icon:first-child{
     display: block;
 }
@@ -734,11 +735,6 @@ main .added-tasks-grid-header{
     min-height: 100px;
     font-size: 1rem;
     background-color: rgba(212, 212, 212, 0.89);
-}
-
-.mark-important-button{
-    width: 20px;
-    border: 2px solid red;
 }
 
 .important-button-label{

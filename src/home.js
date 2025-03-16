@@ -115,7 +115,6 @@ function hidePopup(){
         popUpContainer.style.display = "none"
     });
 }
-hidePopup()
 
 //  minimize sidebar functionality
 const sidebarContainer = document.querySelector(".sidebar")
@@ -156,9 +155,8 @@ function togglingTheme(){
 togglingTheme()
 
 const addingTasksbtn = document.querySelector(".add-task-btn");
-addingTasksbtn.addEventListener("click", () => {
-    addTodo()
-    hidePopup()   
+addingTasksbtn.addEventListener("click", () => { 
+    addTodo()  
 });
 
 const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -231,7 +229,7 @@ function addTodo(){
     myTasks.push(addedTodo);
     localStorage.setItem("tasks", JSON.stringify(myTasks))
     document.querySelector(".added-tasks-container").innerHTML += userTodo
-
+    
 }
 
 //=================== Delete Tasks from localStorage functionality ==================== 
