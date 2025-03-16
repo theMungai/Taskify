@@ -1,1 +1,1 @@
-# Taskify
+# Taskify - Plan your day
