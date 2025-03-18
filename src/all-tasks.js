@@ -1,7 +1,10 @@
+import { myTasks, Todo } from "./home.js";
+
 const allTasksPage = document.querySelector(".js-manipulated-container");
 const allTasksBtn = document.querySelector(".all-tasks-btn");
 
 allTasksBtn.addEventListener("click", () => {
+    console.log("All")
     initializeAllTasksPage()
 })
 
@@ -63,4 +66,6 @@ function initializeAllTasksPage(){
     `;
 
     allTasksPage.innerHTML = allTasksHTML
+
+    document.querySelector(".added-task").innerHTML = myTasks.value
 }

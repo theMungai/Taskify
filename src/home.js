@@ -50,7 +50,8 @@ function initializeHomePage(){
 
 initializeHomePage()
 
-// Task Progress doughnut chart functionality
+
+// ==========================|| Task Progress doughnut chart functionality ||=======================
 function displayTaskProgress(){
     const ctx = document.getElementById('myChart');
 
@@ -87,7 +88,7 @@ function displayTaskProgress(){
 
 displayTaskProgress()
 
-// Increase textarea height functionality
+// =========================|| Increase textarea height functionality ||============================
 function increaseTeaxtAreaHeight(){
     const textArea = document.querySelector("textarea");
     textArea.addEventListener("input", () => {
@@ -97,7 +98,7 @@ function increaseTeaxtAreaHeight(){
 }
 increaseTeaxtAreaHeight()
 
-// Show Popup Container functionality
+// ========================|| Show Popup Container functionality ||=================================
 const popUpContainer = document.querySelector(".popup-container");
 function showPopup(){
     const addTaskBtn = document.querySelector(".add-new-tasks");
@@ -108,15 +109,16 @@ function showPopup(){
 showPopup();
 
 
-// Hide Popup Container functionality
+// =========================|| Hide Popup Container functionality ||================================
 function hidePopup(){
     const hidePopupBtn = document.querySelector(".hide-pop-up-btn");
     hidePopupBtn.addEventListener("click", () => {
         popUpContainer.style.display = "none"
     });
 }
+hidePopup()
 
-//  minimize sidebar functionality
+// ========================|| minimize sidebar functionality ||=====================================
 const sidebarContainer = document.querySelector(".sidebar")
 function minimizeSidebar(){
     const minimizeBtn = document.querySelector(".minimize-sidebar");
@@ -136,7 +138,7 @@ function toggleSidebar(){
 }
 toggleSidebar()
 
-// Toggling dark and light theme functionality
+// =============================|| Toggling dark and light theme functionality ||===================
 function togglingTheme(){
     const lightThemeBtn = document.querySelector(".light-theme-btn");
     const darkThemeBtn = document.querySelector(".dark-theme-btn");
@@ -159,9 +161,9 @@ addingTasksbtn.addEventListener("click", () => {
     addTodo()  
 });
 
-const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+export const myTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-class Todo{
+export class Todo{
     constructor(task, details,date){
         this.task = task;
         this.details = details;
@@ -208,7 +210,7 @@ function addTodo(){
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                         
-                        <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
+                        <p class="tasks-count-down">${daysCountDown()}<span class = "tasks-removed-items">left</span></p>
                     </div>
                 </div>
                 
@@ -232,14 +234,14 @@ function addTodo(){
     
 }
 
-//=================== Delete Tasks from localStorage functionality ==================== 
+//=========================|| Delete Tasks from localStorage functionality ||======================= 
 function deleteTask(index){
     myTasks.splice(index,1);
     localStorage.setItem("tasks", JSON.stringify(myTasks))
     renderTasks()
 }
 
-//=========================== Edit tasks logic ===========================
+//===========================|| Edit tasks logic ||=================================================
 function editTasks(){
     if(localStorage.getItem("name")){
         taskName.value = localStorage.getItem("name")
@@ -267,7 +269,7 @@ function editTasks(){
 }
 
 
-//====================== Render Tasks to the DOM from localStorage ====================
+//========================|| Render Tasks to the DOM from localStorage ||===========================
 function renderTasks(){
     const addedTasksContainer = document.querySelector(".added-tasks-container");
     addedTasksContainer.innerHTML = ""
@@ -303,7 +305,7 @@ function renderTasks(){
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                         
-                        <p class="tasks-count-down">20 days <span class = "tasks-removed-items">left</span></p>
+                        <p class="tasks-count-down">${daysCountDown()}<span class = "tasks-removed-items"> left</span></p>
                     </div>
                 </div>
                 
@@ -323,7 +325,7 @@ function renderTasks(){
         addedTasksContainer.innerHTML += userTodo
     })
 
-    //================ Edit Tasks Functionality ==================================
+    //===========================|| Edit Tasks Functionality ||=====================================
     const addedTasks = document.querySelectorAll(".added-tasks-more-details-container");
     addedTasks.forEach((container) => {
         const editTasksBtn = container.querySelector(".edit-tasks");
@@ -335,7 +337,7 @@ function renderTasks(){
         })
     })
 
-    //================ Delete Tasks Functionality ================================
+    //============================|| Delete Tasks Functionality ||==================================
     const deleteTaskBtn = document.querySelectorAll(".delete-task");
         deleteTaskBtn.forEach((button) => {
             button.addEventListener("click", () => {
@@ -344,7 +346,7 @@ function renderTasks(){
             })
         })
 
-    //================= Toggling show more details button ======================================
+    //=================|| Toggling show more details button ||======================================
     const taskDetailsHouse = document.querySelectorAll(".added-tasks-more-details-container");
 
     taskDetailsHouse.forEach((container) => {
@@ -365,6 +367,63 @@ function renderTasks(){
    
 }
 
+// ============================ Deadline date function =============================================
+
+const userDateInput = document.querySelector("#date-picker")
+
+function daysCountDown(){
+
+    let currentDate = new Date()
+    let currentDay = currentDate.getDate()
+    let currentMonth = currentDate.getMonth() + 1
+    let currentYear = currentDate.getFullYear()
+
+    let userDeadline = new Date(userDateInput.value)
+    let deadlineDay = userDeadline.getDate()
+    let deadlineMonth = userDeadline.getMonth()
+    let deadlineYear = userDeadline.getFullYear()
+
+    let differenceDay = deadlineDay - currentDay
+    let differenceMonth = deadlineMonth -currentMonth
+    let differenceYear = deadlineYear - currentYear
+
+    if(userDeadline < currentDate || userDateInput.value === ""){
+        return "Invalid date"
+    }
+
+    else{
+        if(deadlineMonth >= currentMonth){
+            differenceMonth = deadlineMonth - currentMonth
+        }
+        else {
+            differenceYear = differenceYear - 1;
+            differenceMonth = 12 + deadlineMonth - currentMonth
+        }
+    
+        if(deadlineDay >= currentDay ){
+            differenceDay = deadlineDay - currentDay
+        }
+        else {
+            differenceMonth = differenceMonth - 1;
+            differenceDay = getDaysInMonth(currentYear, currentMonth) + deadlineDay - currentDay
+        }
+    
+        if(differenceMonth < 0){
+            differenceMonth = 11;
+            differenceYear = differenceYear -1;
+        }
+    
+        return console.log(`${differenceYear}year(s), ${differenceMonth}month(s), ${differenceDay}day(s) `);
+    }
+
+    
+
+}
+daysCountDown()
+
+function getDaysInMonth(year, month){
+    return new Date(year, month, 0).getDate()
+}
 
 // function updateTaskCounts() {
 //     const completedTasks = myTasks.filter(task => task.completed).length;
