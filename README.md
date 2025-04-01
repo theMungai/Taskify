@@ -1,5 +1,4 @@
 # Taskify - Plan your day
-# Taskify
 
 Taskify is a simple yet powerful task management web application designed to help users efficiently manage their tasks. It allows users to create, edit, delete, mark tasks as complete, and set tasks as important. The application also includes a countdown timer to show how many days are left until the task's deadline. Taskify also comes with the ability to toggle between dark and light modes, providing a personalized and user-friendly experience.
 
